@@ -2,20 +2,20 @@ var jsonChasis = [
         { 
           "tipo": "Corsa",
           "img": "img/corsa.jpg",
-          "id": 001,
+          "id": 1,
           "taza": "tipoTaza",
           "polarizado": false
 
         },{
          "tipo": "KA",
           "img": "img/ka.jpg",
-          "id": 002,
+          "id": 2,
           "taza": "tipoTaza",
           "polarizado": false
         },{ 
           "tipo": "Uno",
           "img": "img/uno.jpg",
-          "id": 003,
+          "id": 3,
           "taza": "tipoTaza",
           "polarizado": false
         }
@@ -23,15 +23,15 @@ var jsonChasis = [
 
 tipoTaza = [
         { "tipo": "taza1",
-          "id": 01,
+          "id": 1,
           "img": "img/taza1.jpg" 
         },{ 
           "tipo": "taza2",
-          "id": 02,
+          "id": 2,
           "img": "img/taza2.jpg" 
         },{ 
           "tipo": "taza3",
-          "id": 03,
+          "id": 3,
           "img": "img/taza3.jpg" 
         }
         ];
