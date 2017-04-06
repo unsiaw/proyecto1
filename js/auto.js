@@ -1,27 +1,30 @@
 var jsonTiposChasis = [
         { 
           "tipo": "Corsa",
-          "img": "url_img_corsa"
-          "id": "1" 
+          "img": "url_img_corsa",
+          "id": "1",
+          "taza": "tipos_tazas"
         },{
          "tipo": "KA",
-          "img": "url_img_ka" 
-          "id": "2"
+          "img": "url_img_ka",
+          "id": "2",
+          "taza": "tipos_tazas"
         },{ 
           "tipo": "Uno",
-          "img": "url_img_uno"
-          "id": "3" 
+          "img": "url_img_uno",
+          "id": "3",
+          "taza": "tipos_tazas"
         }
         ];
 
 tipos_tazas = [
-        { "tipo": "Nombre taza 1",
+        { "tipo": "taza1",
           "img": "url_img" 
         },{ 
-          "tipo": "Nombre taza 2",
+          "tipo": "taza2",
           "img": "url_img" 
         },{ 
-          "tipo": "Nombre taza 3",
+          "tipo": "taza3",
           "img": "url_img" 
         }
         ];
