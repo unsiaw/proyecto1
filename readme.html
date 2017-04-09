@@ -11,6 +11,8 @@
 
     <!-- Bootstrap -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
+    <!-- Estilos propios -->
+    <link href="css/custom.css" rel="stylesheet">
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -34,14 +36,13 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="#">Brand</a>
+                <a class="navbar-brand" href="#">UNS IAW 2017</a>
             </div>
 
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav">
-                    <li><a href="index.html">Inicio</a></li>
-                    <li><a href="creditos.html">Créditos</a></li>
-                    <li class="active"><a href="about.html">Acerca de</a><span class="sr-only">(current)</span></li>
+                    <li class="active"><a href="index.html">Inicio</a><span class="sr-only">(current)</span></li>
+                    <li><a href="readme.html">Créditos</a></li>
                 </ul>
                 <ul class="nav navbar-nav navbar-right">
                     <li class="dropdown">
@@ -58,19 +59,30 @@
 </header>
 <!-- Página -->
 <section>
-    <h1>Acerca de</h1>
-    <p>Página realizada por Matías Marzullo y Ricardo Ferro Moreno</p>
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-10 col-sm-6 col-md-10 col-md-offset-1 col-xs-offset-1 well">
+                <div class="col-md-12">
+                    <h2>Créditos</h2>
+                    <div class="alert alert-info" role="alert">Página en construcción</div>
+                    <p>Créditos de las librerias y temas que usamos.</p>
+                    <p>Integrantes de la comisión.</p>
+                </div>
+            </div>
+        </div>
+    </div>
 </section>
 
-<div class="row">
-    <div class="col-xs-6 col-md-4">.col-xs-6 .col-md-4</div>
-    <div class="col-xs-6 col-md-4">.col-xs-6 .col-md-4</div>
-    <div class="col-xs-6 col-md-4">.col-xs-6 .col-md-4</div>
-</div>
 <footer>
-    <div class="col-xs-12">
-        <span>Universidad Nacional del Sur</span> | <span>IAW 2017 - <a href="http://cs.uns.edu.ar/~dcm/iaw/downloads/Proyectos/Proyecto1.pdf">Proyecto 1</a> | Marzullo - Ferro Moreno</span>
-    </div>
+    <nav class="navbar navbar-default navbar-fixed-bottom">
+        <div class="container clearfix">
+            <p class="navbar-text pull-left">
+                <small>
+                    &copy; Universidad Nacional del Sur | Ingeniería de Aplicaciones Web (2017) - <a href="http://cs.uns.edu.ar/~dcm/iaw/downloads/Proyectos/Proyecto1.pdf">Proyecto 1</a> | Marzullo - Ferro Moreno
+                </small>
+            </p>
+        </div><!-- /.container-fluid -->
+    </nav>
 </footer>
 
 <!-- Importación de los JS -->
@@ -78,6 +90,7 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 <!-- Include all compiled plugins (below), or include individual files as needed -->
 <script src="js/bootstrap.min.js"></script>
+<script src="js/funciones.js"></script>
 </body>
 
 </html>
