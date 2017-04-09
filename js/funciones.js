@@ -22,7 +22,7 @@ function cargarRandom() {
     var canvas = document.getElementById('imagenAuto');
     var context = canvas.getContext('2d');
 
-    var imagenes = [ "auto1.png", "corsa.jpg", "ka.jpg",  "uno.jpg"];
+    var imagenes = [ "auto1.png", "car08.png", "car09.png",  "car010.png"];
 
     var randomNumber = Math.floor((Math.random() * imagenes.length));
 
