@@ -11,6 +11,8 @@
 
     <!-- Bootstrap -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
+    <!-- Estilos propios -->
+    <link href="css/custom.css" rel="stylesheet">
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -34,7 +36,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="#">Brand</a>
+                <a class="navbar-brand" href="#">UNS IAW 2017</a>
             </div>
 
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
@@ -57,16 +59,53 @@
     </nav>
 </header>
 <!-- Página -->
-<section>
-    <div>
-        <div class="col-md-9">Sección Visualización</div>
-        <div class="col-md-3">Sección Botones</div>
-    </div>
+<div class="container">
+    <section>
+        <div class="row">
+            <div class="col-xs-12 col-sm-6 col-md-8">
+                <h2>Sección de visualización</h2>
+                <p class="bg-info">Página en construcción</p>
+            </div>
+            <div class="col-xs-6 col-md-4">
+                <h2>Sección de botones</h2>
 
-</section>
-<footer>
-    <div class="col-xs-12">
-        <span>Universidad Nacional del Sur</span> | <span>IAW 2017 - <a href="http://cs.uns.edu.ar/~dcm/iaw/downloads/Proyectos/Proyecto1.pdf">Proyecto 1</a> | Marzullo - Ferro Moreno</span>
+                    <ul class="nav nav-pills nav-stacked">
+
+                        <li role="presentation">
+                            <div class="btn-group text-center" role="group" aria-label="...">
+                                <button type="button" class="btn btn-default" aria-label="Anterior">
+                                    <span class="glyphicon glyphicon-step-backward" aria-hidden="true"></span>
+                                </button>
+                                <span class="btn btn-default" aria-label="Ejemplo" aria-disabled="true">Ejemplo</span>
+                                <button type="button" class="btn btn-default" aria-label="Siguiente">
+                                    <span class="glyphicon glyphicon-step-forward" aria-hidden="true"></span>
+                                </button>
+                            </div>
+                        </li>
+                        <li role="presentation">
+                            <div class="btn-group text-center" role="group" aria-label="...">
+                                <button type="button" class="btn btn-default" aria-label="Anterior">
+                                    <span class="glyphicon glyphicon-step-backward" aria-hidden="true"></span>
+                                </button>
+                                <span class="btn btn-default" aria-label="Ejemplo" aria-disabled="true">Ejemplo</span>
+                                <button type="button" class="btn btn-default" aria-label="Siguiente">
+                                    <span class="glyphicon glyphicon-step-forward" aria-hidden="true"></span>
+                                </button>
+                            </div>
+                        </li>
+
+                    </ul>
+            </div>
+        </div>
+    </section>
+</div>
+<footer class="footer">
+    <div class="container">
+        <small>
+           <p class="text-muted">
+               Universidad Nacional del Sur | Ingeniería de Aplicaciones Web (2017) - <a href="http://cs.uns.edu.ar/~dcm/iaw/downloads/Proyectos/Proyecto1.pdf">Proyecto 1</a> | Marzullo - Ferro Moreno
+           </p>
+        </small>
     </div>
 </footer>
 <!-- Importación de los JS -->
