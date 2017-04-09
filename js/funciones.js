@@ -8,7 +8,7 @@ function cargarImagen() {
     var context = canvas.getContext('2d');
 
     img = new Image();
-    img.src = 'img/auto1.png';
+    img.src = 'img/chasis/auto1.png';
     img.onload = function () {
         canvas.width = img.width;
         canvas.height = img.height;
@@ -27,7 +27,7 @@ function cargarRandom() {
     var randomNumber = Math.floor((Math.random() * imagenes.length));
 
     img = new Image();
-    img.src = 'img/'+ imagenes[randomNumber];
+    img.src = 'img/chasis/'+ imagenes[randomNumber];
     img.onload = function () {
         canvas.width = img.width;
         canvas.height = img.height;
