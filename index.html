@@ -62,22 +62,28 @@
 <div class="container">
     <section>
         <div class="row">
-            <div class="col-xs-12 col-sm-6 col-md-8">
-                <h2>Sección de visualización</h2>
-                <p class="bg-info">Página en construcción</p>
+            <div class="col-xs-12 col-sm-6 col-md-8 well">
+                <div class="col-md-12">
+                    <h2>Sección de visualización</h2>
+                    <div class="alert alert-info" role="alert">Página en construcción</div>
+                    <div class="col-xs-12 full-width well">
+                        <canvas id="imagenAuto"></canvas>
+                    </div>
+                </div>
             </div>
-            <div class="col-xs-6 col-md-4">
-                <h2>Sección de botones</h2>
+            <div class="col-xs-6 col-md-4 well">
+                <div class="col-md-12">
+                    <h2>Sección de botones</h2>
 
                     <ul class="nav nav-pills nav-stacked">
 
                         <li role="presentation">
                             <div class="btn-group text-center" role="group" aria-label="...">
-                                <button type="button" class="btn btn-default" aria-label="Anterior">
+                                <button type="button" class="btn btn-primary" aria-label="Anterior">
                                     <span class="glyphicon glyphicon-step-backward" aria-hidden="true"></span>
                                 </button>
-                                <span class="btn btn-default" aria-label="Ejemplo" aria-disabled="true">Ejemplo</span>
-                                <button type="button" class="btn btn-default" aria-label="Siguiente">
+                                <span class="btn btn-default" aria-label="Ejemplo" aria-disabled="true" >Ejemplo</span>
+                                <button type="button" class="btn btn-primary" aria-label="Siguiente">
                                     <span class="glyphicon glyphicon-step-forward" aria-hidden="true"></span>
                                 </button>
                             </div>
@@ -93,26 +99,38 @@
                                 </button>
                             </div>
                         </li>
+                        <li role="presentation">
+                            <div class="btn-group text-center" role="group" aria-label="Cargar imagen">
+                                <button type="button" class="btn btn-info btn-block" aria-label="Cargar!" onclick="cargarImagen()">
+                                    Cargar imagen!
+                                </button>
+                            </div>
+
+                        </li>
 
                     </ul>
+                </div>
             </div>
         </div>
     </section>
 </div>
+
 <footer class="footer">
     <div class="container">
         <small>
-           <p class="text-muted">
-               Universidad Nacional del Sur | Ingeniería de Aplicaciones Web (2017) - <a href="http://cs.uns.edu.ar/~dcm/iaw/downloads/Proyectos/Proyecto1.pdf">Proyecto 1</a> | Marzullo - Ferro Moreno
-           </p>
+            <p class="text-muted">
+                Universidad Nacional del Sur | Ingeniería de Aplicaciones Web (2017) - <a href="http://cs.uns.edu.ar/~dcm/iaw/downloads/Proyectos/Proyecto1.pdf">Proyecto 1</a> | Marzullo - Ferro Moreno
+            </p>
         </small>
     </div>
 </footer>
+
 <!-- Importación de los JS -->
 <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 <!-- Include all compiled plugins (below), or include individual files as needed -->
 <script src="js/bootstrap.min.js"></script>
+<script src="js/funciones.js"></script>
 </body>
 
 </html>

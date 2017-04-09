@@ -1,0 +1,13 @@
+/**
+ * Created by ricky on 9/4/2017.
+ */
+[
+  {
+    "nombre": "auto 1",
+    "imagen": "img/auto1.png"
+  },
+  {
+    "nombre": "auto 2",
+    "imagen": "img/auto2.png"
+  }
+]
