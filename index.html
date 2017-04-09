@@ -84,7 +84,7 @@
                                     <span class="glyphicon glyphicon-step-forward" aria-hidden="true"></span>
                                 </button>
                             </div>
-                        </li>
+                        </li><br>
                         <li role="presentation">
                             <div class="btn-group text-center" role="group" aria-label="...">
                                 <button type="button" class="btn btn-default" aria-label="Anterior">
@@ -95,7 +95,13 @@
                                     <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
                                 </button>
                             </div>
-                        </li>
+                        </li><br>
+                        <li role="presentation">
+                            <div class="btn-group text-center" role="group" aria-label="...">
+                                <span class="btn btn-default  btn-lg" aria-label="Color" aria-disabled="true">Color: </span>
+                                <input class="btn btn-default btn-lg input-lg" type="color" name="carColor" id="blend-color" value="#ff0000" onchange="cambiarColor()"/>
+                            </div>
+                        </li><br><br>
                         <li role="presentation">
                             <div class="btn-group text-center" role="group" aria-label="Cargar imagen">
                                 <button type="button" class="btn btn-success btn-lg btn-block" aria-label="Cargar!" onclick="cargarImagen()">
@@ -106,12 +112,6 @@
                                 <button type="button" class="btn btn-warning btn-lg btn-block" aria-label="Random!" onclick="cargarRandom()">
                                     Random <span class="glyphicon glyphicon-random" aria-hidden="true"></span>
                                 </button>
-                            </div>
-                        </li>
-                        <li role="presentation">
-                            <div class="btn-group text-center" role="group" aria-label="...">
-                                <span class="btn btn-default" aria-label="Color" aria-disabled="true">Color: </span>
-                                <input class="btn btn-default btn-lg input-lg" type="color" name="carColor" id="blend-color" value="#ff0000" onchange="cambiarColor()"/>
                             </div>
                         </li>
                     </ul>
