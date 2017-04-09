@@ -37,3 +37,16 @@ function cargarRandom() {
     console.log(img.src);
 }
 
+function cambiarColor() {
+    var canvas = new fabric.Canvas('imagenAuto');
+
+    fabric.Image.fromURL('img/chasis/auto1.png', function(img) {
+        img.filters.push(new fabric.Image.filters.Blend({
+            color: document.getElementById('blend-color').value,
+            mode: 'multiply'
+        }));
+        img.applyFilters(canvas.renderAll.bind(canvas));
+        canvas.add(img);
+        console.log("Estoy cambiando el color");
+    });
+}
