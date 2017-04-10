@@ -1,14 +1,15 @@
 /**
  * Created by ricky on 9/4/2017.
  */
-
+const path_chasis = "img/chasis/";
+const path_tazas = "img/tazas/";
 
 function cargarImagen() {
     var canvas = document.getElementById('imagenAuto');
     var context = canvas.getContext('2d');
 
     img = new Image();
-    img.src = 'img/chasis/auto1.png';
+    img.src = path_chasis + 'auto1.png';
     img.onload = function () {
         canvas.width = img.width;
         canvas.height = img.height;
@@ -24,10 +25,8 @@ function cargarRandom() {
 
     var imagenes = [ "auto1.png", "car08.png", "car09.png",  "car010.png"];
 
-    var randomNumber = Math.floor((Math.random() * imagenes.length));
-
     img = new Image();
-    img.src = 'img/chasis/'+ imagenes[randomNumber];
+    img.src = path_chasis + imagenes[numeroRandom(imagenes.length)];
     img.onload = function () {
         canvas.width = img.width;
         canvas.height = img.height;
@@ -41,7 +40,7 @@ function cambiarColor() {
 
     var canvas = new fabric.Canvas('imagenAuto');
     
-    fabric.Image.fromURL('img/chasis/auto1.png', function(img) {
+    fabric.Image.fromURL(path_chasis+'auto1.png', function(img) {
         img.filters.push(new fabric.Image.filters.Blend({
             color: document.getElementById('blend-color').value,
             mode: 'multiply'
@@ -53,3 +52,12 @@ function cambiarColor() {
         console.log("Estoy cambiando el color");
     });
 }
+
+/* Crea un numero random entre 0 y un limite dado */
+function numeroRandom(limite) {
+    return Math.floor((Math.random() * limite));
+}
+
+$().ready(function() {
+    cargarRandom();
+});
