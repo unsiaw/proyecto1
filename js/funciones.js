@@ -41,7 +41,7 @@ function cambiarColor() {
 
     var canvas = new fabric.Canvas('imagenAuto');
     
-    fabric.Image.fromURL('img/chasis/auto1.png', function(img) {
+    fabric.Image.fromURL('img/chasis/car01tra.png', function(img) {
         img.filters.push(new fabric.Image.filters.Blend({
             color: document.getElementById('blend-color').value,
             mode: 'multiply'
