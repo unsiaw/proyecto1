@@ -4,18 +4,15 @@
 const path_chasis = "img/chasis/";
 const path_tazas = "img/tazas/";
 
-   var imagenes = [ "auto1.png", "car08.png", "car09.png",  "car010.png", "car011.png",  "car012.png", "car013.png",  "car014.png"];
-   var num = 0;
+var imagenes = [ "auto1.png", "car08.png", "car09.png",  "car010.png", "car011.png",  "car012.png", "car013.png",  "car014.png"];
+var num = 0;
 
 function nextChasis(){
 
     var canvas = document.getElementById('imagenAuto');
     var context = canvas.getContext('2d');
     img = new Image();
-    num++;
-        if (num >= imagenes.lenght){
-            num = 0;
-        }
+    num = (num+1) % imagenes.length;
     img.src = path_chasis + imagenes[num];
     img.onload = function () {
         canvas.width = img.width;
@@ -32,10 +29,7 @@ function prevChasis(){
     var canvas = document.getElementById('imagenAuto');
     var context = canvas.getContext('2d');
     img = new Image();
-    num--;
-        if (num < imagenes.lenght){
-            num = imagenes.lenght - 1;
-        }
+    num = (num-1) % imagenes.length;
     img.src = path_chasis + imagenes[num];
     img.onload = function () {
         canvas.width = img.width;
@@ -64,8 +58,6 @@ function cargarImagen() {
 function cargarRandom() {
     var canvas = document.getElementById('imagenAuto');
     var context = canvas.getContext('2d');
-
-    var imagenes = [ "auto1.png", "car08.png", "car09.png",  "car010.png"];
 
     img = new Image();
     img.src = path_chasis + imagenes[numeroRandom(imagenes.length)];
