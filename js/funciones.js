@@ -93,5 +93,21 @@ function numeroRandom(limite) {
 }
 
 $().ready(function() {
+    cargarTheme();
     cargarRandom();
 });
+
+/* Themes propios y guardando el theme elegido */
+function cargarTheme() {
+   var themeElegido = localStorage.getItem("theme");
+   if (themeElegido === undefined && themeElegido !== null) {
+       themeElegido = "css/bootstrap-theme.min.css";
+       localStorage.setItem("theme",themeElegido);
+   }
+   $("#theme").attr("href", themeElegido);
+}
+
+function cambiarTheme(theme) {
+    document.getElementById('theme').href = theme;
+    localStorage.setItem("theme",theme);
+}
