@@ -38,7 +38,7 @@ function prevChasis(){
     var canvas = document.getElementById('imagenAuto');
     var context = canvas.getContext('2d');
     img = new Image();
-    (num == 0) ? (num = imagenes.length) : (num = (num-1) % imagenes.length);
+    (num == 0) ? (num = imagenes.length-1) : (num = (num-1) % imagenes.length);
     img.src = path_chasis + imagenes[num];
     img.onload = function () {
         canvas.width = img.width;
