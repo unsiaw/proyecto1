@@ -12,7 +12,7 @@ var autito = {};
 var canvas = new fabric.Canvas('imagenAuto');
 
 canvas.setWidth(miContenedor.offsetWidth);
-canvas.setHeight(miContenedor.offsetHeight * 2);
+canvas.setHeight(miContenedor.offsetHeight * 1.7);
 canvas.renderAll();
 
 
