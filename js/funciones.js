@@ -9,12 +9,7 @@ var num = 0;
 
 var autito = {};
 
-var canvas = new fabric.Canvas('imagenAuto');
-
-canvas.setWidth(miContenedor.offsetWidth);
-canvas.setHeight(miContenedor.offsetHeight * 1.7);
-canvas.renderAll();
-
+var canvas;
 
 function nextChasis(){
 
@@ -79,30 +74,18 @@ function cargarRandom() {
     console.log(img.src);
 }
 
-function cambiarColor() {
-
-    //var canvas = new fabric.Canvas('imagenAuto');
-/*
-    fabric.Image.fromURL(path_chasis + imagenes[num], function(img) {
-        img.filters.push(new fabric.Image.filters.Blend({
-            color: document.getElementById('blend-color').value,
-            mode: 'multiply'
-        }));
-        img.applyFilters(canvas.renderAll.bind(canvas));
-        img.selectable = false;
-        canvas.add(img);
-
-        console.log("Estoy cambiando el color");
-    });
-    */
-}
-
 /* Crea un numero random entre 0 y un limite dado */
 function numeroRandom(limite) {
     return Math.floor((Math.random() * limite));
 }
 
 $().ready(function() {
+    canvas = new fabric.Canvas('imagenAuto');
+
+    canvas.setWidth(miContenedor.offsetWidth);
+    canvas.setHeight(miContenedor.offsetHeight * 1.7);
+    canvas.renderAll();
+
     cargarTheme();
     cargarAuto();
 });
@@ -125,9 +108,6 @@ function cambiarTheme(theme) {
 
 /* Pruebas nuevas sobre carga de un auto, ruedas, chasis, etc */
 function cargarAuto() {
-
-    var miContenedor = document.getElementById("miContenedor");
-
     fabric.Image.fromURL("img/chasis/car01.png", function(img) {
         img.selectable = false;
         img.crossOrigin = 'anonymous';
@@ -144,11 +124,8 @@ function cargarAuto() {
 }
 
 
-function cambiarColor(elemento){
+function cambiarColor(){
     var obj = autito["chasis"];
-
-    console.log(obj);
-
     obj.filters = []; // reseteo los filtros (para no sobreescribir uno arriba del otro)
     obj.applyFilters();
 
@@ -156,17 +133,6 @@ function cambiarColor(elemento){
         color: document.getElementById('blend-color').value,
         opacity: 0.6
     }));
-
-
-    /*
-     obj.filters.push(new fabric.Image.filters.Blend({
-     color: document.getElementById('blend-color').value,
-     mode: 'add',
-     alpha: 1
-     }));
-     */
     obj.applyFilters(canvas.renderAll.bind(canvas));
-
-    canvas.renderAll();
-    //applyFilterValue(16, 'color', this.value);
+    //canvas.renderAll();
 }
