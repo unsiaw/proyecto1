@@ -4,7 +4,7 @@
 const path_chasis = "img/chasis/";
 const path_tazas = "img/tazas/";
 
-var imagenes = [ "auto1.png", "car08.png", "car09.png",  "car010.png", "car011.png",  "car012.png", "car013.png",  "car014.png"];
+var imagenes = [ "car01.png", "car02.png", "car03.png",  "car04.png", "car05.png",  "car06.png", "car07.png",  "car08.png"];
 var num = 0;
 
 var autito = {};
