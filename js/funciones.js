@@ -12,12 +12,13 @@ var autito = {};
 
 var canvas;
 
-function addToCanvas(path, prop) {
+function addToCanvas(path, prop, callback = null) {
     fabric.Image.fromURL(path, function (img) {
         img.selectable = false;
         img.crossOrigin = 'anonymous';
         canvas.add(img);
         autito[prop] = img;
+        if (callback !== null) callback(img);
     }, { crossOrigin: '' });
 }
 
@@ -25,8 +26,7 @@ function nextChasis() {
     num = (num + 1) % imagenes.length;
     canvas.clear(); // limpio lo que haya en el canvas
     addToCanvas(path_chasis + imagenes[num],"fondo");
-    addToCanvas(path_chasis + aux[num],"chasis");
-    cambiarColor();
+    addToCanvas(path_chasis + aux[num],"chasis", cambiarColor);
     canvas.renderAll();
 }
 
@@ -35,11 +35,11 @@ function prevChasis() {
     num = mod((num-1),imagenes.length);
     canvas.clear(); // limpio lo que haya en el canvas
     addToCanvas(path_chasis + imagenes[num],"fondo");
-    addToCanvas(path_chasis + aux[num],"chasis");
-    cambiarColor();
+    addToCanvas(path_chasis + aux[num],"chasis", cambiarColor);
     canvas.renderAll();
 }
 
+/* Obsoleto. Borrar! */
 function cargarImagen() {
     var canvas = document.getElementById('imagenAuto');
     var context = canvas.getContext('2d');
@@ -57,16 +57,22 @@ function cargarImagen() {
 
 function cargarRandom() {
     num = numeroRandom(imagenes.length);
+    document.getElementById('blend-color').value = colorRandom();
     canvas.clear(); // limpio lo que haya en el canvas
     addToCanvas(path_chasis + imagenes[num],"fondo");
-    addToCanvas(path_chasis + aux[num],"chasis");
-    cambiarColor();
+    addToCanvas(path_chasis + aux[num],"chasis", cambiarColor);
     canvas.renderAll();
 }
 
 /* Crea un numero random entre 0 y un limite dado */
 function numeroRandom(limite) {
     return Math.floor((Math.random() * limite));
+}
+
+function colorRandom() {
+    return "#000000".replace(/0/g, function () {
+        return (~~(Math.random() * 16)).toString(16);
+    });
 }
 
 $().ready(function () {
@@ -103,8 +109,7 @@ function cargarAutoDefault() {
 }
 
 
-function cambiarColor() {
-    var obj = autito["chasis"];
+function cambiarColor(obj = autito['chasis']) {
     obj.filters = []; // reseteo los filtros (para no sobreescribir uno arriba del otro)
     obj.applyFilters();
 
