@@ -24,13 +24,9 @@ function addToCanvas(path, prop) {
 function nextChasis() {
     num = (num + 1) % imagenes.length;
     canvas.clear(); // limpio lo que haya en el canvas
-    console.log(autito);
     addToCanvas(path_chasis + imagenes[num],"fondo");
-    console.log(autito);
     addToCanvas(path_chasis + aux[num],"chasis");
-    console.log(autito);
     cambiarColor();
-    console.log(autito);
     canvas.renderAll();
 }
 
@@ -108,7 +104,6 @@ function cargarAutoDefault() {
 
 
 function cambiarColor() {
-
     var obj = autito["chasis"];
     obj.filters = []; // reseteo los filtros (para no sobreescribir uno arriba del otro)
     obj.applyFilters();
@@ -118,7 +113,6 @@ function cambiarColor() {
         opacity: 0.6
     }));
     obj.applyFilters(canvas.renderAll.bind(canvas));
-    //canvas.renderAll();
 }
 
 /* Funcion Modulo, ya que en Javascript el modulo de un negativo no se comporta como el resto */
