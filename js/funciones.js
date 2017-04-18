@@ -18,7 +18,10 @@ function addToCanvas(path, prop, callback = null) {
         img.crossOrigin = 'anonymous';
         canvas.add(img);
         autito[prop] = img;
-        if (callback !== null) callback(img);
+        if (callback !== null) {
+            callback(img);
+        }
+        canvas.renderAll();
     }, { crossOrigin: '' });
 }
 
@@ -27,7 +30,7 @@ function nextChasis() {
     canvas.clear(); // limpio lo que haya en el canvas
     addToCanvas(path_chasis + imagenes[num],"fondo");
     addToCanvas(path_chasis + aux[num],"chasis", cambiarColor);
-    canvas.renderAll();
+    //canvas.renderAll();
 }
 
 
@@ -36,7 +39,7 @@ function prevChasis() {
     canvas.clear(); // limpio lo que haya en el canvas
     addToCanvas(path_chasis + imagenes[num],"fondo");
     addToCanvas(path_chasis + aux[num],"chasis", cambiarColor);
-    canvas.renderAll();
+    //canvas.renderAll();
 }
 
 /* Obsoleto. Borrar! */
@@ -61,7 +64,7 @@ function cargarRandom() {
     canvas.clear(); // limpio lo que haya en el canvas
     addToCanvas(path_chasis + imagenes[num],"fondo");
     addToCanvas(path_chasis + aux[num],"chasis", cambiarColor);
-    canvas.renderAll();
+
 }
 
 /* Crea un numero random entre 0 y un limite dado */
