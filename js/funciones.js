@@ -18,16 +18,19 @@ function addToCanvas(path, prop) {
         img.crossOrigin = 'anonymous';
         canvas.add(img);
         autito[prop] = img;
-    }, {
-        crossOrigin: ''
-    });
+    }, { crossOrigin: '' });
 }
 
 function nextChasis() {
     num = (num + 1) % imagenes.length;
     canvas.clear(); // limpio lo que haya en el canvas
+    console.log(autito);
     addToCanvas(path_chasis + imagenes[num],"fondo");
+    console.log(autito);
     addToCanvas(path_chasis + aux[num],"chasis");
+    console.log(autito);
+    cambiarColor();
+    console.log(autito);
     canvas.renderAll();
 }
 
@@ -37,6 +40,7 @@ function prevChasis() {
     canvas.clear(); // limpio lo que haya en el canvas
     addToCanvas(path_chasis + imagenes[num],"fondo");
     addToCanvas(path_chasis + aux[num],"chasis");
+    cambiarColor();
     canvas.renderAll();
 }
 
@@ -60,6 +64,7 @@ function cargarRandom() {
     canvas.clear(); // limpio lo que haya en el canvas
     addToCanvas(path_chasis + imagenes[num],"fondo");
     addToCanvas(path_chasis + aux[num],"chasis");
+    cambiarColor();
     canvas.renderAll();
 }
 
@@ -73,10 +78,10 @@ $().ready(function () {
 
     canvas.setWidth(miContenedor.offsetWidth);
     canvas.setHeight(miContenedor.offsetHeight * 1.7);
-    canvas.renderAll();
+    //canvas.renderAll();
 
     cargarTheme();
-    cargarAuto();
+    cargarAutoDefault();
 });
 
 /* Themes propios y guardando el theme elegido */
@@ -96,29 +101,14 @@ function cambiarTheme(theme) {
 
 
 /* Pruebas nuevas sobre carga de un auto, ruedas, chasis, etc */
-function cargarAuto() {
-    fabric.Image.fromURL("img/chasis/car01.png", function (img) {
-        img.selectable = false;
-        img.crossOrigin = 'anonymous';
-        canvas.add(img);
-        autito["fondo"] = img;
-    }, {
-        crossOrigin: ''
-    });
-    fabric.Image.fromURL("img/chasis/car01t.png", function (img) {
-        img.selectable = false;
-        img.crossOrigin = 'anonymous';
-        canvas.add(img);
-        autito["chasis"] = img;
-    }, {
-        crossOrigin: ''
-    });
-
-    canvas.renderAll();
+function cargarAutoDefault() {
+    num = -1; // despues nextChasis se encarga de hacerlo 0.
+    nextChasis();
 }
 
 
 function cambiarColor() {
+
     var obj = autito["chasis"];
     obj.filters = []; // reseteo los filtros (para no sobreescribir uno arriba del otro)
     obj.applyFilters();
