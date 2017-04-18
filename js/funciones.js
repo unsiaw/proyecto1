@@ -21,7 +21,6 @@ function addToCanvas(path, prop, callback = null) {
         if (callback !== null) {
             callback(img);
         }
-        canvas.renderAll();
     }, { crossOrigin: '' });
 }
 
@@ -30,7 +29,7 @@ function nextChasis() {
     canvas.clear(); // limpio lo que haya en el canvas
     addToCanvas(path_chasis + imagenes[num],"fondo");
     addToCanvas(path_chasis + aux[num],"chasis", cambiarColor);
-    //canvas.renderAll();
+    canvas.renderAll();
 }
 
 
@@ -39,7 +38,7 @@ function prevChasis() {
     canvas.clear(); // limpio lo que haya en el canvas
     addToCanvas(path_chasis + imagenes[num],"fondo");
     addToCanvas(path_chasis + aux[num],"chasis", cambiarColor);
-    //canvas.renderAll();
+    canvas.renderAll();
 }
 
 /* Obsoleto. Borrar! */
@@ -64,7 +63,7 @@ function cargarRandom() {
     canvas.clear(); // limpio lo que haya en el canvas
     addToCanvas(path_chasis + imagenes[num],"fondo");
     addToCanvas(path_chasis + aux[num],"chasis", cambiarColor);
-
+    canvas.renderAll();
 }
 
 /* Crea un numero random entre 0 y un limite dado */
@@ -80,10 +79,8 @@ function colorRandom() {
 
 $().ready(function () {
     canvas = new fabric.Canvas('imagenAuto');
-
     canvas.setWidth(miContenedor.offsetWidth);
     canvas.setHeight(miContenedor.offsetHeight * 1.7);
-    //canvas.renderAll();
 
     cargarTheme();
     cargarAutoDefault();
