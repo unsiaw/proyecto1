@@ -143,6 +143,16 @@
 <!-- Include all compiled plugins (below), or include individual files as needed -->
 <script src="js/bootstrap.min.js"></script>
 <script src="js/funciones.js"></script>
+<script>
+    $( document ).ready(function() {
+        canvas = new fabric.Canvas('imagenAuto');
+        canvas.setWidth(miContenedor.offsetWidth);
+        canvas.setHeight(miContenedor.offsetHeight * 1.7);
+
+        cargarTheme();
+        cargarAutoDefault();
+    });
+</script>
 </body>
 
 </html>

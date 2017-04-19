@@ -12,33 +12,39 @@ var autito = {};
 
 var canvas;
 
-function addToCanvas(path, prop, callback = null) {
-    fabric.Image.fromURL(path, function (img) {
+function addToCanvas(auto, callback = null) {
+    fabric.Image.fromURL(auto.pathfondo, function (img) {
         img.selectable = false;
         img.crossOrigin = 'anonymous';
         canvas.add(img);
-        autito[prop] = img;
-        if (callback !== null) {
-            callback(img);
-        }
-    }, { crossOrigin: '' });
+        autito["fondo"] = img;
+        fabric.Image.fromURL(auto.pathchasis, function (img) {
+            img.selectable = false;
+            img.crossOrigin = 'anonymous';
+            canvas.add(img);
+            autito["chasis"] = img;
+            if (callback !== null) {
+                callback(img);
+            }
+        });
+    });
 }
 
 function nextChasis() {
     num = (num + 1) % imagenes.length;
+    autito.pathfondo = path_chasis + imagenes[num];
+    autito.pathchasis = path_chasis + aux[num];
     canvas.clear(); // limpio lo que haya en el canvas
-    addToCanvas(path_chasis + imagenes[num],"fondo");
-    addToCanvas(path_chasis + aux[num],"chasis", cambiarColor);
-    canvas.renderAll();
+    addToCanvas(autito,cambiarColor);
 }
 
 
 function prevChasis() {
     num = mod((num-1),imagenes.length);
+    autito.pathfondo = path_chasis + imagenes[num];
+    autito.pathchasis = path_chasis + aux[num];
     canvas.clear(); // limpio lo que haya en el canvas
-    addToCanvas(path_chasis + imagenes[num],"fondo");
-    addToCanvas(path_chasis + aux[num],"chasis", cambiarColor);
-    canvas.renderAll();
+    addToCanvas(autito,cambiarColor);
 }
 
 
@@ -55,10 +61,10 @@ function guardarImagen() {
 function cargarRandom() {
     num = numeroRandom(imagenes.length);
     document.getElementById('blend-color').value = colorRandom();
+    autito.pathfondo = path_chasis + imagenes[num];
+    autito.pathchasis = path_chasis + aux[num];
     canvas.clear(); // limpio lo que haya en el canvas
-    addToCanvas(path_chasis + imagenes[num],"fondo");
-    addToCanvas(path_chasis + aux[num],"chasis", cambiarColor);
-    canvas.renderAll();
+    addToCanvas(autito,cambiarColor);
 }
 
 /* Crea un numero random entre 0 y un limite dado */
@@ -72,6 +78,7 @@ function colorRandom() {
     });
 }
 
+/*
 $().ready(function () {
     canvas = new fabric.Canvas('imagenAuto');
     canvas.setWidth(miContenedor.offsetWidth);
@@ -80,11 +87,12 @@ $().ready(function () {
     cargarTheme();
     cargarAutoDefault();
 });
+*/
 
 /* Themes propios y guardando el theme elegido */
 function cargarTheme() {
     var themeElegido = localStorage.getItem("theme");
-    if (themeElegido === undefined && themeElegido !== null) {
+    if ((themeElegido === undefined) || (themeElegido === null)) {
         themeElegido = "css/bootstrap-theme.min.css";
         localStorage.setItem("theme", themeElegido);
     }
@@ -113,6 +121,7 @@ function cambiarColor(obj = autito['chasis']) {
         opacity: 0.6
     }));
     obj.applyFilters(canvas.renderAll.bind(canvas));
+    canvas.renderAll();
 }
 
 /* Funcion Modulo, ya que en Javascript el modulo de un negativo no se comporta como el resto */
