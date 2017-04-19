@@ -60,34 +60,14 @@ function guardarImagen() {
 
 function cargarRandom() {
     num = numeroRandom(imagenes.length);
-    document.getElementById('blend-color').value = colorRandom();
+    var color = document.getElementById('blend-color').value = colorRandom();
     autito.pathfondo = path_chasis + imagenes[num];
     autito.pathchasis = path_chasis + aux[num];
     canvas.clear(); // limpio lo que haya en el canvas
     addToCanvas(autito,cambiarColor);
+    document.getElementById('blend-color').jscolor.fromString(color);
 }
 
-/* Crea un numero random entre 0 y un limite dado */
-function numeroRandom(limite) {
-    return Math.floor((Math.random() * limite));
-}
-
-function colorRandom() {
-    return "000000".replace(/0/g, function () {
-        return (~~(Math.random() * 16)).toString(16);
-    });
-}
-
-/*
-$().ready(function () {
-    canvas = new fabric.Canvas('imagenAuto');
-    canvas.setWidth(miContenedor.offsetWidth);
-    canvas.setHeight(miContenedor.offsetHeight * 1.7);
-
-    cargarTheme();
-    cargarAutoDefault();
-});
-*/
 
 /* Themes propios y guardando el theme elegido */
 function cargarTheme() {
@@ -122,9 +102,4 @@ function cambiarColor(obj = autito['chasis']) {
     }));
     obj.applyFilters(canvas.renderAll.bind(canvas));
     canvas.renderAll();
-}
-
-/* Funcion Modulo, ya que en Javascript el modulo de un negativo no se comporta como el resto */
-function mod(n, m) {
-    return ((n % m) + m) % m;
 }
