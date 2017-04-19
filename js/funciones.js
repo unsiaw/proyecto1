@@ -51,7 +51,7 @@ function prevChasis() {
 function guardarImagen() {
     var a = document.createElement('a');
     a.href = canvas.toDataURL("image/png").replace("image/png", "image/octet-stream");
-    a.download = "output.png";
+    a.download = "auto.png";
     document.body.appendChild(a);
     a.click();
     document.body.removeChild(a);
