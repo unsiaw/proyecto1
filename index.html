@@ -74,7 +74,7 @@
             </div>
             <div class="col-xs-6 col-md-4 well">
                 <div class="col-md-12">
-                    <h2>Sección de botones</h2><br><br>
+                    <h2>Sección de botones</h2>
                     <ul class="nav nav-pills nav-stacked">
                         <li role="presentation">
                             <h4>
@@ -99,11 +99,10 @@
                                 </button>
                             </div></h4>
                         <li role="presentation">
-                            <div class="btn-group text-center  alert alert-info" role="alert" aria-label="...">
-                               <h4> <p class="navbar-text">Color</p>
-                                <input class="btn btn-default btn-lg input-lg" type="color" name="carColor" id="blend-color" value="#ff0000" onchange="cambiarColor()"/> </h4>
+                            <div class="btn-group text-center  alert alert-info" role="alert" aria-label="color">
+                               <h4> <p class="navbar-text">Color</p><input class="btn btn-lg jscolor" id="blend-color" value="ab2567" onchange="cambiarColor()"/></h4>
                             </div>
-                        </li><br><br>
+                        </li>
                         <li role="presentation">
                             <div class="btn-group text-center" role="group" aria-label="Cargar imagen">
                                 <button type="button" class="btn btn-success btn-lg btn-block" aria-label="Guardar!" onclick="guardarImagen()">
@@ -143,6 +142,7 @@
 <!-- Include all compiled plugins (below), or include individual files as needed -->
 <script src="js/bootstrap.min.js"></script>
 <script src="js/funciones.js"></script>
+<script src="js/jscolor.min.js"></script>
 <script>
     $( document ).ready(function() {
         canvas = new fabric.Canvas('imagenAuto');
