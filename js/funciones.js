@@ -78,6 +78,7 @@ function colorRandom() {
     });
 }
 
+/*
 $().ready(function () {
     canvas = new fabric.Canvas('imagenAuto');
     canvas.setWidth(miContenedor.offsetWidth);
@@ -86,11 +87,12 @@ $().ready(function () {
     cargarTheme();
     cargarAutoDefault();
 });
+*/
 
 /* Themes propios y guardando el theme elegido */
 function cargarTheme() {
     var themeElegido = localStorage.getItem("theme");
-    if (themeElegido === undefined && themeElegido !== null) {
+    if ((themeElegido === undefined) || (themeElegido === null)) {
         themeElegido = "css/bootstrap-theme.min.css";
         localStorage.setItem("theme", themeElegido);
     }
