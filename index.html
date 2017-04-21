@@ -111,7 +111,7 @@
                                 </div>
                             <li role="presentation">
                                     <div class="btn-group text-center alert alert-info" role="alert" aria-label="color">
-                                        <h4> <p>Color</p><input class="btn btn-sm jscolor" id="blend-color" value="FFFFFF" onchange="cambiarColor()"/></h4>
+                                        <h4> <p>Color</p><input class="btn btn-sm jscolor" id="blend-color" value="FFFFFF" onchange="cambiarColor(this.value)"/></h4>
                                     </div>
                             </li>
                             <li role="presentation">
@@ -129,10 +129,11 @@
                 </div>
             </div>
         </div>
+    </div>
 </section>
-<br><br><br><br>
+
 <footer>
-    <nav class="navbar navbar-inverse navbar-fixed-bottom">
+    <nav class="navbar navbar-default navbar-fixed-bottom">
         <div class="container clearfix">
             <p class="navbar-text pull-left">
                 <small>
@@ -153,8 +154,9 @@
 <!-- Include all compiled plugins (below), or include individual files as needed -->
 <script src="js/bootstrap.min.js"></script>
 <script src="js/utils.js"></script>
-<script src="js/modelo.js"></script>
 <script src="js/vista.js"></script>
+<script src="js/controlador.js"></script>
+<script src="js/modelo.js"></script>
 <script>
     $( document ).ready(function() {
         canvas = new fabric.Canvas('imagenAuto');
@@ -162,7 +164,7 @@
         canvas.setHeight(miContenedor.offsetHeight * 1.7);
 
         cargarTheme();
-        cargarAutoDefault();
+        iniciarAuto();
     });
 </script>
 </body>
