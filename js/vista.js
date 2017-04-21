@@ -2,6 +2,7 @@
 var canvas;
 
 function pintarAuto(auto) {
+    $(':button').prop('disabled', true); // desactivo todos los botones
     canvas.clear(); // limpio lo que haya en el canvas
     fabric.Image.fromURL(auto.pathfondo, function (img) {
         img.selectable = false;
@@ -23,6 +24,7 @@ function pintarAuto(auto) {
             }));
             img.applyFilters(canvas.renderAll.bind(canvas));
             canvas.renderAll();
+            $(':button').prop('disabled', false); // vuelvo a activar todos los botones
         });
     });
 }
