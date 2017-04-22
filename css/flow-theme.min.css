@@ -1402,7 +1402,7 @@ a.bg-info:focus {
 }
 a.bg-warning:hover,
 a.bg-warning:focus {
-  background-color: #0ce3ac;
+  background-color: #000000;
 }
 .bg-danger {
   background-color: #cc0000;
@@ -3125,8 +3125,8 @@ fieldset[disabled] .btn-default.focus {
 .btn-primary:focus,
 .btn-primary.focus {
   color: #ffffff;
-  background-color: #0ce3ac;
-  border-color: #804400;
+  background-color: #000000;
+  border-color: #0ce3ac;
 }
 .btn-primary:hover {
   color: #000000;
@@ -3296,12 +3296,12 @@ fieldset[disabled] .btn-info.focus {
 .btn-warning:focus,
 .btn-warning.focus {
   color: #ffffff;
-  background-color: #0ce3ac;
-  border-color: #804400;
+  background-color: #000000;
+  border-color: #0ce3ac;
 }
 .btn-warning:hover {
   color: #000000;
-  background-color: #0ce3ac;
+  background-color: #000000;
   border-color: #0ce3ac;
 }
 .btn-warning:active,
@@ -3322,7 +3322,7 @@ fieldset[disabled] .btn-info.focus {
 .open > .dropdown-toggle.btn-warning.focus {
   color: #ffffff;
   background-color: #a85a00;
-  border-color: #804400;
+  border-color: #0ce3ac;
 }
 .btn-warning:active,
 .btn-warning.active,
@@ -4883,7 +4883,7 @@ a.label:focus {
 }
 .label-primary[href]:hover,
 .label-primary[href]:focus {
-  background-color: #0ce3ac;
+  background-color: #000000;
 }
 .label-success {
   background-color: #77b300;
@@ -4904,7 +4904,7 @@ a.label:focus {
 }
 .label-warning[href]:hover,
 .label-warning[href]:focus {
-  background-color: #0ce3ac;
+  background-color: #000000;
 }
 .label-danger {
   background-color: #cc0000;
