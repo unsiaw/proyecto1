@@ -31,10 +31,10 @@ var jsonChasis = [
                     },
                 "atras":
                     {
-                        "x": 476,
+                        "x": 474,
                         "y": 184
                     },
-                "size": 56
+                "size": 57
             }
     },
     {
@@ -70,7 +70,7 @@ var jsonChasis = [
                 "atras":
                     {
                         "x": 502,
-                        "y": 187
+                        "y": 186
                     },
                 "size": 60
             }
@@ -78,22 +78,78 @@ var jsonChasis = [
     {
         "id": 5,
         "fondo": "car05.png",
-        "chasis": "car05t.png"
+        "chasis": "car05t.png",
+        "ruedas":
+            {
+                "adelante":
+                    {
+                        "x": 183,
+                        "y": 189
+                    },
+                "atras":
+                    {
+                        "x": 485,
+                        "y": 189
+                    },
+                "size": 56
+            }
     },
     {
         "id": 6,
         "fondo": "car06.png",
-        "chasis": "car06t.png"
+        "chasis": "car06t.png",
+        "ruedas":
+            {
+                "adelante":
+                    {
+                        "x": 170,
+                        "y": 192
+                    },
+                "atras":
+                    {
+                        "x": 466,
+                        "y": 192
+                    },
+                "size": 53
+            }
     },
     {
         "id": 7,
         "fondo": "car07.png",
-        "chasis": "car07t.png"
+        "chasis": "car07t.png",
+        "ruedas":
+            {
+                "adelante":
+                    {
+                        "x": 155,
+                        "y": 182
+                    },
+                "atras":
+                    {
+                        "x": 473,
+                        "y": 182
+                    },
+                "size": 61
+            }
     },
     {
         "id": 8,
         "fondo": "car08.png",
-        "chasis": "car08t.png"
+        "chasis": "car08t.png",
+        "ruedas":
+            {
+                "adelante":
+                    {
+                        "x": 166,
+                        "y": 195
+                    },
+                "atras":
+                    {
+                        "x": 443,
+                        "y": 195
+                    },
+                "size": 48
+            }
     }
 ];
 
@@ -109,5 +165,17 @@ var jsonTazas = [
     {
         "id": 3,
         "taza": "taza3.png"
+    },
+    {
+        "id": 4,
+        "taza": "taza4.png"
+    },
+    {
+        "id": 5,
+        "taza": "taza5.png"
+    },
+    {
+        "id": 6,
+        "taza": "taza6.png"
     }
 ];
