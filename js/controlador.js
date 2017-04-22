@@ -1,17 +1,18 @@
-// Constantes
-const path_chasis = "img/chasis/";
-const path_tazas = "img/tazas/";
 
-var num = 0;
+var num_chasis;
+var num_taza;
 var auto = {};
 
 var jsonChasis;
 var jsonTazas;
 
 function iniciarAuto() {
-    num = -1;
+    num_chasis = 0;
+    num_taza = 0;
+    auto.chasis = jsonChasis[num_chasis];
+    auto.tazas = jsonTazas[num_taza];
     auto.color = obtenerColorVista();
-    nextChasis();
+    pintarAuto(auto);
 }
 
 function cambiarColor(color) {
@@ -21,34 +22,38 @@ function cambiarColor(color) {
 }
 
 function nextChasis() {
-    num = mod((num+1),jsonChasis.length);
-    updateChasis();
+    num_chasis = mod((num_chasis+1),jsonChasis.length);
+    auto.chasis = jsonChasis[num_chasis];
     pintarAuto(auto);
 }
 
 function prevChasis() {
-    num = mod((num-1),jsonChasis.length);
-    updateChasis();
+    num_chasis = mod((num_chasis-1),jsonChasis.length);
+    auto.chasis = jsonChasis[num_chasis];
+    pintarAuto(auto);
+}
+
+
+function nextTaza() {
+    num_taza = mod((num_taza+1),jsonTazas.length);
+    auto.tazas = jsonTazas[num_taza];
+    pintarAuto(auto);
+}
+
+function prevTaza() {
+    num_taza = mod((num_taza-1),jsonTazas.length);
+    auto.tazas = jsonTazas[num_taza];
     pintarAuto(auto);
 }
 
 function cargarRandom() {
-    num = numeroRandom(jsonChasis.length);
+    num_chasis = numeroRandom(jsonChasis.length);
+    num_taza = numeroRandom(jsonTazas.length);
     var color = auto.color = colorRandom();
     cambiarColorVista(color);
-    updateChasis();
+    auto.chasis = jsonChasis[num_chasis];
+    auto.tazas = jsonTazas[num_taza];
     pintarAuto(auto);
-}
-
-/* Actualiza el objeto auto con el pathfondo y pathchasis según el num actual */
-function updateChasis() {
-    auto.pathfondo = path_chasis + jsonChasis[num].fondo;
-    auto.pathchasis = path_chasis + jsonChasis[num].chasis;
-}
-
-/* Actualiza el objeto del auto con el pathtaza según el num actual */
-function updateTazas() {
-    auto.pathtazas = path_tazas + jsonTazas[num].taza;
 }
 
 /* Functionalidad para el botón de Descargar Imagen */

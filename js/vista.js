@@ -1,30 +1,62 @@
 
+// Constantes
+const path_chasis = "img/chasis/";
+const path_tazas = "img/tazas/";
+
 var canvas;
 
 function pintarAuto(auto) {
     $(':button').prop('disabled', true); // desactivo todos los botones
     canvas.clear(); // limpio lo que haya en el canvas
-    fabric.Image.fromURL(auto.pathfondo, function (img) {
+
+    // Pinto fondo
+    fabric.Image.fromURL(path_chasis+auto.chasis.fondo, function (img) {
         img.selectable = false;
         img.crossOrigin = 'anonymous';
         canvas.add(img);
-        auto.fondo = img;
-        fabric.Image.fromURL(auto.pathchasis, function (img) {
+
+        // Pinto chasis
+        fabric.Image.fromURL(path_chasis+auto.chasis.chasis, function (img) {
             img.selectable = false;
             img.crossOrigin = 'anonymous';
             canvas.add(img);
-            auto.chasis = img;
-
-            img.filters = []; // reseteo los filtros (para no sobreescribir uno arriba del otro)
-            img.applyFilters();
-
+            // Coloreo el chasis
             img.filters.push(new fabric.Image.filters.Tint({
                 color: auto.color,
                 opacity: 0.6
             }));
             img.applyFilters(canvas.renderAll.bind(canvas));
-            canvas.renderAll();
-            $(':button').prop('disabled', false); // vuelvo a activar todos los botones
+
+            // Pinto la taza de adelante
+            fabric.Image.fromURL(path_tazas+auto.tazas.taza, function (img) {
+                    img.selectable = false;
+                    img.crossOrigin = 'anonymous';
+                    canvas.add(img);
+                    canvas.bringToFront(img);
+                    // Pinto la taza de atras
+                    fabric.Image.fromURL(path_tazas+auto.tazas.taza, function (img) {
+                        img.selectable = false;
+                        img.crossOrigin = 'anonymous';
+                        canvas.add(img);
+                        canvas.bringToFront(img);
+                        canvas.renderAll(); // renderizo
+                        $(':button').prop('disabled', false); // vuelvo a activar todos los botones
+                    },{
+                        left: auto.chasis.ruedas.atras.x,
+                        top: auto.chasis.ruedas.atras.y,
+                        width: auto.chasis.ruedas.size,
+                        height: auto.chasis.ruedas.size,
+                        originX: "center",
+                        originY: "center"
+                    });
+                },{
+                    left: auto.chasis.ruedas.adelante.x,
+                    top: auto.chasis.ruedas.adelante.y,
+                    width: auto.chasis.ruedas.size,
+                    height: auto.chasis.ruedas.size,
+                    originX: "center",
+                    originY: "center"
+            });
         });
     });
 }
